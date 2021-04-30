@@ -10,7 +10,7 @@
   <h2> The Credit Card Balance Transfer Calculator
   </h2>
   <div text-center>
-  <img src="https://cdn.jsdelivr.net/gh/jesn-park17/ionic-nyc7sq@master/calculator.jpg">
+  <img src="https://cdn.jsdelivr.net/gh/jesn-park17/ionic-jksowh@master/0_Screen-Shot-2020-12-30-at-085327.png">
   </div>
 
   <p>
@@ -28,38 +28,29 @@
     3. Click the "Compute" button to know the necessary details. 
     </p>
 
-  <p><b> 
-    Enter your balance transfer amount:
-  </b></p>
-
   <ion-item>
   <ion-label><h5> Balance Transfer Amount (P): </h5></ion-label>
-  <ion-input type="number" min="0" max="infinity" [(ngModel)]="balanceamount"></ion-input>
+  <ion-input type="number" min="0" max="infinity" [(ngModel)]="balance"></ion-input>
   </ion-item>
-
-  <p><b>
-    Select your payment term below:
-    (6, 12, 18, or 24 months)
-  </b></p>
 
   <ion-item>
   <ion-label> <h5> Payment Term: </h5></ion-label>
-  <ion-input type="number" min="6" max="24" step="6" [(ngModel)]="paymentTerm"></ion-input>
+  <ion-input type="number" min="6" max="24" step="6" [(ngModel)]="term"></ion-input>
   </ion-item>
 
-  <button ion-button color="danger" (click)="compute()">Compute</button>
+  <button ion-button color="dark" (click)="compute()">Compute</button>
 
   <br /><br />
-    <ion-item *ngIf="totalinterestpayable">
-      <h3> Your total interest payable is: {{totalinterestpayable | currency: '&#8369;'}} </h3>
+    <ion-item *ngIf="totalinterest">
+      <h3> Total interest payable: {{totalinterest | currency: '&#8369;'}} </h3>
   </ion-item>
 
-  <ion-item *ngIf="monthlypayment">
-      <h3> Your total monthly payment is: {{monthlypayment | currency: '&#8369;'}} </h3>
+  <ion-item *ngIf="monthpay">
+      <h3> Total monthly payment: {{monthpay | currency: '&#8369;'}} </h3>
   </ion-item>
 
-  <ion-item *ngIf="totalamountpayable">
-      <h3> Your total amount payable is: {{totalamountpayable | currency: '&#8369;'}} </h3>
+  <ion-item *ngIf="totalamount">
+      <h3> Total amount payable {{totalamount | currency: '&#8369;'}} </h3>
   </ion-item>
 
 </ion-content>

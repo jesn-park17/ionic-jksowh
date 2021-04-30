@@ -8,20 +8,20 @@ import { NavController } from 'ionic-angular';
 })
 
 export class HomePage {
-  amountBalance: number;
-  termBalance: number;
-  Interestpayabletotal: number;
-  Amountpayabletotal: number;
-  PaymentMonthly: number;
+  balance: number;
+  term: number;
+  totalinterest: number;
+  totalamount: number;
+  monthpay: number;
 
   constructor(public navCtrl: NavController) {
 
   }
 
   compute () {
-    this.Interestpayabletotal = ((this.amountBalance * 1.5) / 100 ) * this.termBalance;
-    this.Amountpayabletotal = this.Interestpayabletotal*1 + this.amountBalance*1;
-    this.PaymentMonthly = this.Amountpayabletotal / this.termBalance;
+    this.totalinterest = ((this.balance * 1.5) / 100 ) * this.term;
+    this.totalamount = this.totalinterest*1 + this.balance*1;
+    this.monthpay = this.totalamount / this.term;
   }
 
 }
